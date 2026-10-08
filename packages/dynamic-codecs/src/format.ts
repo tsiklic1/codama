@@ -274,8 +274,7 @@ export function formatEnum(decoded: DecodedEnumTypeNode, _options: FormatOptions
  * ```
  */
 export function formatPublicKey(decoded: DecodedPublicKeyTypeNode, options: FormatOptions = {}): string {
-    const address = decoded.value as Address;
-    return options.formatAddress ? options.formatAddress(address) : address;
+    return options.formatAddress ? options.formatAddress(decoded.value) : decoded.value;
 }
 
 const SECONDS_PER_DAY = 86_400n;
